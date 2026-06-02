@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
         // 現在のY座標を取得
         Vector3 position = transform.position;
 
+        // カメラにおいて行かれないよう右方向（X軸）へ移動させる
+        position.x += speed * Time.deltaTime;
+
         // Wキーが押されている間
         if (Keyboard.current.wKey.isPressed)
         {
