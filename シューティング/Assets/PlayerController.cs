@@ -25,10 +25,22 @@ public class Player : MonoBehaviour
             position.y += speed * Time.deltaTime;
         }
 
+        //画面上部で止まるようにする
+        if (position.y > (float)5.5)
+        {
+            position.y = (float)5.5;
+        }
+
         // Sキーが押されている間
         if (Keyboard.current.sKey.isPressed)
         {
             position.y -= speed * Time.deltaTime;
+        }
+
+        //画面下部で止まるようにする
+        if (position.y < (float)-5.5)
+        {
+            position.y = (float)-5.5;
         }
 
         // 変更した座標を反映
