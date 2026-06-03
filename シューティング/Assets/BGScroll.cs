@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BGScroll : MonoBehaviour
 {
-    [SerializeField] private Transform player; // プレイヤー（またはカメラ）のTransformを指定
+    [SerializeField] private Transform player;
     [SerializeField] private float imageWidth = 30f; // 画像の幅
 
     private Transform[] backgrounds;
@@ -18,12 +18,11 @@ public class BGScroll : MonoBehaviour
 
     void Update()
     {
-        // プレイヤーのX座標を基準にする
         float playerX = player.position.x;
 
         foreach (Transform bg in backgrounds)
         {
-            // 背景の右端がプレイヤーの左側に来てしまったら、右側に移動させる
+            // 背景の右端がプレイヤーの左側に来たら、右側に移動
             if (bg.position.x + imageWidth < playerX)
             {
                 bg.position += new Vector3(imageWidth * 2, 0, 0);
