@@ -5,6 +5,8 @@ public class Player : MonoBehaviour
 {
     // 移動速度を調整可能な変数にします
     [SerializeField] float speed = 5.0f;
+    //　プレイヤーのHP
+    [SerializeField] int P_HP = 5;
 
     void Start()
     {
@@ -45,5 +47,15 @@ public class Player : MonoBehaviour
 
         // 変更した座標を反映
         transform.position = position;
+
+        if (P_HP <= 0)
+        {
+            Destroy(gameObject);//消滅
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) //ぶつかったら消える命令文開始
+    {
+        P_HP--;
     }
 }

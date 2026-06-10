@@ -1,33 +1,46 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections;
 
 public class Enemy2_Controller : MonoBehaviour
 {
-    float speed = 5.0f;
+    [SerializeField] float speed = 5.0f;
+    [SerializeField] int E_HP = 1;
+    public float waitTime = 1.5f;
 
-    void Start()
+    bool started = false;
+    bool isEscaping = false;
+
+    void OnBecameVisible()
     {
-        
+        if (!started)
+        {
+            started = true;
+            StartCoroutine(Escape());
+        }
+    }
+
+    IEnumerator Escape()
+    {
+        yield return new WaitForSeconds(waitTime);
+        isEscaping = true;
     }
 
     void Update()
     {
-        // カメラの視野に入った瞬間に呼ばれる
-        if (GetComponent<SpriteRenderer>().isVisible)
+        if (isEscaping)
         {
-            // 現在のY座標を取得
-            Vector3 position = transform.position;
+            transform.position += Vector3.right * speed * Time.deltaTime;
+        }
 
-            position.x += speed * Time.deltaTime;
-
-            transform.position = position;
+        if (E_HP <= 0)
+        {
+            Destroy(gameObject);//消滅
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision) //ぶつかったら消える命令文開始
     {
-        Destroy(gameObject);//消滅
+        E_HP--;
     }
 }
-
-
