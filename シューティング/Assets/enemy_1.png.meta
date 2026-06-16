@@ -1,8 +1,9 @@
 fileFormatVersion: 2
-guid: 2b6822aed78bf424a97dc701620f2c71
+guid: 2310c3fee6b4a6a489c2802b29fa11c4
 TextureImporter:
   internalIDToNameTable:
   - first:
+<<<<<<< HEAD:シューティング/Assets/Bullet.png.meta
       213: 2208703988740019828
     second: Bullet_0
   - first:
@@ -77,6 +78,10 @@ TextureImporter:
   - first:
       213: 5432581156775028061
     second: Bullet_24
+=======
+      213: -6142762861184566788
+    second: shoot_enemy_0
+>>>>>>> a9f8a9bd85ea6a4a695baa0db25881a830bd79f6:シューティング/Assets/enemy_1.png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -185,6 +190,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+<<<<<<< HEAD:シューティング/Assets/Bullet.png.meta
       name: Bullet_3
       rect:
         serializedVersion: 2
@@ -192,6 +198,15 @@ TextureImporter:
         y: 163
         width: 88
         height: 90
+=======
+      name: shoot_enemy_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 495
+        width: 198
+        height: 140
+>>>>>>> a9f8a9bd85ea6a4a695baa0db25881a830bd79f6:シューティング/Assets/enemy_1.png.meta
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,12 +215,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
+<<<<<<< HEAD:シューティング/Assets/Bullet.png.meta
       spriteID: 66964580403a232d0800000000000000
       internalID: -3300396339194205850
+=======
+      spriteID: cf9b1a739b580caa0800000000000000
+      internalID: -6142762861184566788
+>>>>>>> a9f8a9bd85ea6a4a695baa0db25881a830bd79f6:シューティング/Assets/enemy_1.png.meta
       vertices: []
       indices: 
       edges: []
       weights: []
+<<<<<<< HEAD:シューティング/Assets/Bullet.png.meta
     - serializedVersion: 2
       name: Bullet_7
       rect:
@@ -316,11 +337,17 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+=======
+>>>>>>> a9f8a9bd85ea6a4a695baa0db25881a830bd79f6:シューティング/Assets/enemy_1.png.meta
     outline: []
     customData: 
     physicsShape: []
     bones: []
+<<<<<<< HEAD:シューティング/Assets/Bullet.png.meta
     spriteID: 805249f46888f91418b0cba7d5af88d6
+=======
+    spriteID: d2abd548b7272544cb79013f5a979cad
+>>>>>>> a9f8a9bd85ea6a4a695baa0db25881a830bd79f6:シューティング/Assets/enemy_1.png.meta
     internalID: 0
     vertices: []
     indices: 
@@ -332,6 +359,7 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
+<<<<<<< HEAD:シューティング/Assets/Bullet.png.meta
       Bullet_0: 2208703988740019828
       Bullet_1: 4385501425044414559
       Bullet_10: -3016176512631950420
@@ -356,6 +384,9 @@ TextureImporter:
       Bullet_7: 1823540885998108106
       Bullet_8: 8191024754275108436
       Bullet_9: 6088543973832532824
+=======
+      shoot_enemy_0: -6142762861184566788
+>>>>>>> a9f8a9bd85ea6a4a695baa0db25881a830bd79f6:シューティング/Assets/enemy_1.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
