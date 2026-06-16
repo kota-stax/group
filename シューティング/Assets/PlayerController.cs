@@ -1,16 +1,22 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
     // 移動速度を調整可能な変数にします
     [SerializeField] float speed = 5.0f;
-    //　プレイヤーのHP
+    // プレイヤーのHP
     [SerializeField] int P_HP = 5;
+    // HPUI
+    [SerializeField] TMP_Text hpText;
 
     void Start()
     {
         Application.targetFrameRate = 60;
+
+        // 【修正】ゲーム開始時に最初のHPをUIに表示する
+        UpdateHPText();
     }
 
     void Update()
@@ -27,10 +33,10 @@ public class Player : MonoBehaviour
             position.y += speed * Time.deltaTime;
         }
 
-        //画面上部で止まるようにする
-        if (position.y > (float)5.5)
+        // 画面上部で止まるようにする
+        if (position.y > 5.5f) // (float)5.5 よりも 5.5f と書くのが一般的です
         {
-            position.y = (float)5.5;
+            position.y = 5.5f;
         }
 
         // Sキーが押されている間
@@ -39,10 +45,10 @@ public class Player : MonoBehaviour
             position.y -= speed * Time.deltaTime;
         }
 
-        //画面下部で止まるようにする
-        if (position.y < (float)-5.5)
+        // 画面下部で止まるようにする
+        if (position.y < -5.5f)
         {
-            position.y = (float)-5.5;
+            position.y = -5.5f;
         }
 
         // 変更した座標を反映
@@ -50,12 +56,26 @@ public class Player : MonoBehaviour
 
         if (P_HP <= 0)
         {
-            Destroy(gameObject);//消滅
+            Destroy(gameObject); // 消滅
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) //ぶつかったら消える命令文開始
+    // 【修正】ぶつかった時の処理
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        // ここで敵だけに反応させたい場合は if (collision.gameObject.CompareTag("Enemy")) などで囲うと良いです
         P_HP--;
+
+        // HPの表示を更新する
+        UpdateHPText();
+    }
+
+    // 【追加】HPテキストを更新するための専用の関数
+    void UpdateHPText()
+    {
+        if (hpText != null)
+        {
+            hpText.text = "HP: " + P_HP.ToString();
+        }
     }
 }

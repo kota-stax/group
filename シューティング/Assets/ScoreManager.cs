@@ -1,13 +1,16 @@
 using UnityEngine;
+using TMPro;
 
-public class HP : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
+    public static ScoreManager instance;
+
+    [SerializeField] TMP_Text scoreText;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public int maxHP = 100;
-    public int currentHP;
     void Start()
     {
-        currentHP = maxHP;
+        
     }
 
     // Update is called once per frame
