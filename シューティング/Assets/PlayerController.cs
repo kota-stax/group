@@ -6,6 +6,9 @@ public class Player : MonoBehaviour
     // 移動速度を調整可能な変数にします
     [SerializeField] float speed = 5.0f;
 
+    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] Transform shotPoint;
+
     void Start()
     {
         Application.targetFrameRate = 60;
@@ -13,6 +16,14 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            Instantiate(
+                bulletPrefab,
+                shotPoint.position,
+                Quaternion.identity
+            );
+        }
         // 現在のY座標を取得
         Vector3 position = transform.position;
 
