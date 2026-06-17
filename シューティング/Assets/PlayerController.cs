@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,11 +8,14 @@ public class Player : MonoBehaviour
     // 移動速度を調整可能な変数にします
     [SerializeField] float speed = 5.0f;
     [SerializeField] AudioClip spaceSE;
+    [SerializeField] int P_HP = 5;
+    [SerializeField] TMP_Text hpText;
     private AudioSource audioSource;
 
     void Start()
     {
         Application.targetFrameRate = 60;
+        UpdateHPText();
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -56,6 +61,24 @@ public class Player : MonoBehaviour
             {
                 audioSource.PlayOneShot(spaceSE);
             }
+        }
+    }
+        //ぶつかったときの処理
+        private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // ここで敵だけに反応させたい場合は if (collision.gameObject.CompareTag("Enemy")) などで囲うと良いです
+        P_HP--;
+
+        // HPの表示を更新する
+        UpdateHPText();
+    }
+
+    // 【追加】HPテキストを更新するための専用の関数
+    void UpdateHPText()
+    {
+        if (hpText != null)
+        {
+            hpText.text = "HP: " + P_HP.ToString();
         }
     }
 }
