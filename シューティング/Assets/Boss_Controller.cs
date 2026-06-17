@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections;
 
-public class Enemy2_Controller : MonoBehaviour
+public class Boss_Controller : MonoBehaviour
 {
     [SerializeField] float speed = 5.0f;
     [SerializeField] int hp = 1;
@@ -43,5 +43,3 @@ public class Enemy2_Controller : MonoBehaviour
         }
     }
 }
-
-
