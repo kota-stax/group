@@ -6,15 +6,12 @@ public class Player : MonoBehaviour
     // 移動速度を調整可能な変数にします
     [SerializeField] float speed = 5.0f;
 
-<<<<<<< HEAD
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform shotPoint;
-=======
     [SerializeField] AudioClip ShootSE; 
     private AudioSource audioSource;
 
     [SerializeField] float SeVol = 2.0f;
->>>>>>> a9f8a9bd85ea6a4a695baa0db25881a830bd79f6
 
     void Start()
     {
@@ -56,6 +53,7 @@ public class Player : MonoBehaviour
         {
             position.y -= speed * Time.deltaTime;
         }
+
 
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
