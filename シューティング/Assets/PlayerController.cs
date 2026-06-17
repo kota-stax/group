@@ -5,10 +5,13 @@ public class Player : MonoBehaviour
 {
     // 移動速度を調整可能な変数にします
     [SerializeField] float speed = 5.0f;
+    [SerializeField] AudioClip spaceSE;
+    private AudioSource audioSource;
 
     void Start()
     {
         Application.targetFrameRate = 60;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -45,5 +48,14 @@ public class Player : MonoBehaviour
 
         // 変更した座標を反映
         transform.position = position;
+
+        // スペースキーで弾発射＆SE
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            if (spaceSE != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(spaceSE);
+            }
+        }
     }
 }
