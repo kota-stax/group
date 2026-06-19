@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2310c3fee6b4a6a489c2802b29fa11c4
+guid: cbbd69d772327ad47989437e4168f2c7
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -116,10 +116,10 @@ TextureImporter:
       name: shoot_enemy_0
       rect:
         serializedVersion: 2
-        x: 55
-        y: 493
-        width: 180
-        height: 135
+        x: 1125
+        y: 458
+        width: 235
+        height: 206
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
