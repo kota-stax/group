@@ -46,9 +46,9 @@ public class Player : MonoBehaviour
         }
 
         //画面下部で止まるようにする
-        if (position.y < (float)-5.5)
+        if (position.y < (float)-4.5)
         {
-            position.y = (float)-5.5;
+            position.y = (float)-4.5;
         }
 
         // 変更した座標を反映
@@ -68,6 +68,10 @@ public class Player : MonoBehaviour
     {
         // ここで敵だけに反応させたい場合は if (collision.gameObject.CompareTag("Enemy")) などで囲うと良いです
         P_HP--;
+        if (P_HP <= 0) //hp0で死亡
+        {
+            Destroy(gameObject);//消滅
+        }
 
         // HPの表示を更新する
         UpdateHPText();
