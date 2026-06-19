@@ -7,15 +7,41 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] TMP_Text scoreText;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    // 現在のスコアを保持する変数
+    private int score = 0;
+
+    void Awake()
     {
-        
+        // シグルトンの初期化（他から ScoreManager.instance で呼べるようにする）
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        // ゲーム開始時にスコアを0で表示
+        UpdateScoreText();
+    }
+
+    // 外部（敵など）からスコアを増やすために呼ぶ関数
+    public void AddScore(int point)
+    {
+        score += point; // 受け取ったポイント分増やす
+        UpdateScoreText(); // UIを更新
+    }
+
+    // スコアテキストを更新する関数
+    void UpdateScoreText()
+    {
+        if (scoreText != null)
+        {
+            scoreText.text = "Score: " + score.ToString();
+        }
     }
 }
