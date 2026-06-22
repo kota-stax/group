@@ -760,6 +760,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2325894752727876680, guid: af7622af649444b43be0f8a9be9905bb, type: 3}
   m_PrefabInstance: {fileID: 7361636205025421500}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1931678139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1931678140}
+  m_Layer: 0
+  m_Name: ShotPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1931678140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931678139}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1474366735}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2003159597
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,6 +1057,14 @@ PrefabInstance:
       propertyPath: spaceSE
       value: 
       objectReference: {fileID: 8300000, guid: cc40fa43991826341826edf39840fea6, type: 3}
+    - target: {fileID: 1774568243967878333, guid: d939f60f2360e9344acf492454bebbc3, type: 3}
+      propertyPath: shotPoint
+      value: 
+      objectReference: {fileID: 1931678140}
+    - target: {fileID: 1774568243967878333, guid: d939f60f2360e9344acf492454bebbc3, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 314516622518879303, guid: 390f14384253d494e818f3d810003db6, type: 3}
     - target: {fileID: 2700879968230251028, guid: d939f60f2360e9344acf492454bebbc3, type: 3}
       propertyPath: m_Name
       value: 'Player '
@@ -1076,6 +1115,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8838814224742340611, guid: d939f60f2360e9344acf492454bebbc3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 319115712}
+    - targetCorrespondingSourceObject: {fileID: 8838814224742340611, guid: d939f60f2360e9344acf492454bebbc3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1931678140}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2700879968230251028, guid: d939f60f2360e9344acf492454bebbc3, type: 3}
       insertIndex: -1

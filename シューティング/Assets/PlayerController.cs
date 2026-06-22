@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
 {
     // 移動速度を調整可能な変数にします
     [SerializeField] float speed = 5.0f;
+
+    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] Transform shotPoint;
     [SerializeField] AudioClip spaceSE;
     [SerializeField] int P_HP = 5;
     [SerializeField] TMP_Text hpText;
@@ -57,6 +60,12 @@ public class Player : MonoBehaviour
         // スペースキーで弾発射＆SE
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
+            Instantiate(
+                bulletPrefab,
+                shotPoint.position,
+                Quaternion.identity
+            );
+
             if (spaceSE != null && audioSource != null)
             {
                 audioSource.PlayOneShot(spaceSE);
