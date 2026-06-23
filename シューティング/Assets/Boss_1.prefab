@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3976193716049200597}
   m_Layer: 0
   m_Name: Boss_1
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,7 +124,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -180,5 +180,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Boss_Controller
   speed: 5
-  hp: 5
-  waitTime: 2
+  hp: 20
+  explosionPrefab: {fileID: 6599279764915239397, guid: 9794acb2bdea19d44b34dd5df519dfeb, type: 3}
+  scoreValue: 20
+  waitTime: 1.5
+  moveRange: 6
+  moveFrequency: 1
+  enemyBulletPrefab: {fileID: 2568732776097923504, guid: 3709c7404a4a83a418399fd1d5c05271, type: 3}
+  shotInterval: 1.5

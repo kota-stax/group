@@ -7,6 +7,18 @@ public class Player_Bullet : MonoBehaviour
         // ボスに当たった
         if (collision.CompareTag("Boss"))
         {
+            Boss_Controller boss = collision.GetComponent<Boss_Controller>();
+
+            if (boss != null)
+            {
+                boss.TakeDamage(1);
+            }
+
+            Destroy(gameObject);
+        }
+
+        if (collision.CompareTag("Boss"))
+        {
             Enemy2_Controller boss = collision.GetComponent<Enemy2_Controller>();
 
             if (boss != null)
