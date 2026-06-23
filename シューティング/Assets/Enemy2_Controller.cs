@@ -6,6 +6,7 @@ public class Enemy2_Controller : MonoBehaviour
     [SerializeField] float speed = 5.0f;
     [SerializeField] int hp = 10;
     [SerializeField] GameObject explosionPrefab;
+    [SerializeField] int scoreValue = 5; //  ここで5ポイントに設定！
     public float waitTime = 1.5f;
 
     bool started = false;
@@ -46,6 +47,11 @@ public class Enemy2_Controller : MonoBehaviour
 
         if (hp <= 0)
         {
+            //  消滅する前にScoreManagerに5ポイント送る
+            if (ScoreManager.instance != null)
+            {
+                ScoreManager.instance.AddScore(scoreValue);
+            }
             if (explosionPrefab != null)
             {
                 Instantiate(explosionPrefab, transform.position, Quaternion.identity);
