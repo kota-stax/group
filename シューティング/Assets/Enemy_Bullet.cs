@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class Enemy_Bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
-    [SerializeField] float speed = 8f;
+    public float speed = 5f;
 
     void Update()
     {
-        transform.Translate(Vector2.left * speed * Time.deltaTime);
+        transform.Translate(Vector3.left * speed * Time.deltaTime);
     }
 
-    private void OnBecameInvisible()
+    void OnBecameInvisible()
     {
         Destroy(gameObject);
     }

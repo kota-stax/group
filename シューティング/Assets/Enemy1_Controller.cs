@@ -4,7 +4,28 @@ using TMPro;
 public class Enemy1_Controller : MonoBehaviour
 {
     [SerializeField] GameObject explosionPrefab;
-    [SerializeField] int scoreValue = 1; //  ポイント1を設定
+    [SerializeField] int scoreValue = 1;
+
+    [SerializeField] GameObject enemyBulletPrefab;
+    [SerializeField] float shotInterval = 2f;
+
+    float shotTimer = 0f;
+
+    void Update()
+    {
+        shotTimer += Time.deltaTime;
+
+        if (shotTimer >= shotInterval)
+        {
+            shotTimer = 0f;
+
+            Instantiate(
+                enemyBulletPrefab,
+                transform.position,
+                Quaternion.identity
+            );
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,13 +33,11 @@ public class Enemy1_Controller : MonoBehaviour
         {
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
 
-            // 💡 消滅する前にScoreManagerに1ポイント送る
             if (ScoreManager.instance != null)
             {
                 ScoreManager.instance.AddScore(scoreValue);
             }
 
-            // 弾と自分（エネミー）を削除
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
