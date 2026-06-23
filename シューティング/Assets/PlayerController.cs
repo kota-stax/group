@@ -78,11 +78,6 @@ public class Player : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             P_HP--;
-        }
-
-        if (other.CompareTag("Enemy"))
-        {
-            P_HP--;
 
             Destroy(other.gameObject); // 当たった弾を消す
         }
