@@ -72,17 +72,26 @@ public class Player : MonoBehaviour
             }
         }
     }
-        //ぶつかったときの処理
-        private void OnCollisionEnter2D(Collision2D collision)
+    //ぶつかったときの処理
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        // ここで敵だけに反応させたい場合は if (collision.gameObject.CompareTag("Enemy")) などで囲うと良いです
-        P_HP--;
-        if (P_HP <= 0) //hp0で死亡
+        if (other.CompareTag("Enemy"))
         {
-            Destroy(gameObject);//消滅
+            P_HP--;
         }
 
-        // HPの表示を更新する
+        if (other.CompareTag("Enemy"))
+        {
+            P_HP--;
+
+            Destroy(other.gameObject); // 当たった弾を消す
+        }
+
+        if (P_HP <= 0)
+        {
+            Destroy(gameObject);
+        }
+
         UpdateHPText();
     }
 
