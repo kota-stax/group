@@ -10,6 +10,10 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] float spawnInterval2 = 15f;
     float timer2 = 0f; // 敵2用のタイマー
 
+    [SerializeField] GameObject bossPrefab1;
+    [SerializeField] float spawnInterval1_1 = 10f;
+    float timer1_1 = -1f; // 敵2用のタイマー
+
     void Update()
     {
         timer1 += Time.deltaTime;
@@ -24,6 +28,14 @@ public class EnemySpawner : MonoBehaviour
         {
             timer2 = 0f;
             SpawnEnemy(enemyPrefab2);
+        }
+
+        timer1_1 += Time.deltaTime;
+        if (timer1_1 >= spawnInterval1_1)
+        {
+            timer1_1 = -10000f;
+            SpawnEnemy(bossPrefab1);
+            timer1_1 -= Time.deltaTime;
         }
     }
 
