@@ -1,15 +1,19 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections;
 
 public class Enemy2_Controller : MonoBehaviour
 {
     [SerializeField] float speed = 5.0f;
-    [SerializeField] int hp = 10;     // ボスのHP
+    [SerializeField] int hp = 10;
     public float waitTime = 1.5f;
 
     bool started = false;
     bool isEscaping = false;
+
+    void Start()
+    {
+        Debug.Log("Boss Start HP : " + hp);
+    }
 
     void OnBecameVisible()
     {
@@ -34,14 +38,11 @@ public class Enemy2_Controller : MonoBehaviour
         }
     }
 
-    // ダメージを受ける関数
     public void TakeDamage(int damage)
     {
         hp -= damage;
-
         Debug.Log("Boss HP : " + hp);
 
-        // HPが0になったら撃破
         if (hp <= 0)
         {
             Destroy(gameObject);
