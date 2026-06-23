@@ -180,5 +180,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy2_Controller
   speed: 5
-  hp: 1
+  hp: 20
   waitTime: 1.5

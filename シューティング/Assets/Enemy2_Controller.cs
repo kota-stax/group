@@ -5,7 +5,7 @@ using System.Collections;
 public class Enemy2_Controller : MonoBehaviour
 {
     [SerializeField] float speed = 5.0f;
-    [SerializeField] int hp = 50;     // ボスのHP
+    [SerializeField] int hp = 10;     // ボスのHP
     public float waitTime = 1.5f;
 
     bool started = false;
