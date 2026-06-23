@@ -1,17 +1,13 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy1_Controller : MonoBehaviour
 {
-    [SerializeField] float speed = 5.0f;
-    [SerializeField] int hp = 1;
-
-    private void OnCollisionEnter2D(Collision2D collision) //ぶつかったら消える命令文開始
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        hp--;
-        if (hp <= 0)
+        if (collision.CompareTag("Bullet"))
         {
-            Destroy(gameObject);//消滅
-        }       
+            Destroy(collision.gameObject); // 弾を消す
+            Destroy(gameObject);           // 敵を消す
+        }
     }
 }

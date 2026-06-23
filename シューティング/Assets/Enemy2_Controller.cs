@@ -5,7 +5,7 @@ using System.Collections;
 public class Enemy2_Controller : MonoBehaviour
 {
     [SerializeField] float speed = 5.0f;
-    [SerializeField] int hp = 1;
+    [SerializeField] int hp = 50;     // ボスのHP
     public float waitTime = 1.5f;
 
     bool started = false;
@@ -34,14 +34,17 @@ public class Enemy2_Controller : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) //ぶつかったら消える命令文開始
+    // ダメージを受ける関数
+    public void TakeDamage(int damage)
     {
-        hp--;
+        hp -= damage;
+
+        Debug.Log("Boss HP : " + hp);
+
+        // HPが0になったら撃破
         if (hp <= 0)
         {
-            Destroy(gameObject);//消滅
+            Destroy(gameObject);
         }
     }
 }
-
-
