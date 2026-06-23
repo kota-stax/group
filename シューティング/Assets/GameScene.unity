@@ -693,9 +693,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemyPrefab1: {fileID: 4028009763694972864, guid: 37f3791e689227247b8ed5fdda5faf41, type: 3}
-  spawnInterval1: 3
+  spawnInterval1: 1.5
   enemyPrefab2: {fileID: 3038850851559588077, guid: ddf5dc7793e35434ea95889d1aa280c5, type: 3}
-  spawnInterval2: 15
+  spawnInterval2: 10
 --- !u!1 &1474366730 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2700879968230251028, guid: d939f60f2360e9344acf492454bebbc3, type: 3}

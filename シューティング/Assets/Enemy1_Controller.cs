@@ -51,4 +51,10 @@ public class Enemy1_Controller : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void OnBecameInvisible()
+    {
+        // オブジェクトを破棄
+        Destroy(gameObject);
+    }
 }

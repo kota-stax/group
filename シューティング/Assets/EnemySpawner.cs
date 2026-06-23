@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy(GameObject prefab)
     {
-        Vector3 spawnPos = Camera.main.ViewportToWorldPoint(new Vector3(1.1f, Random.Range(0.1f, 0.9f), 10f));
+        Vector3 spawnPos = Camera.main.ViewportToWorldPoint(new Vector3(1.1f, Random.Range(0.3f, 0.9f), 10f));
 
         Instantiate(prefab, spawnPos, Quaternion.identity);
     }

@@ -80,4 +80,9 @@ public class Enemy2_Controller : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    void OnBecameInvisible()
+    {
+        // オブジェクトを破棄
+        Destroy(gameObject);
+    }
 }
