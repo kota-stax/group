@@ -2,12 +2,16 @@ using UnityEngine;
 
 public class Enemy1_Controller : MonoBehaviour
 {
+    [SerializeField] GameObject explosionPrefab;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Bullet"))
         {
-            Destroy(collision.gameObject); // 弾を消す
-            Destroy(gameObject);           // 敵を消す
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
     }
 }

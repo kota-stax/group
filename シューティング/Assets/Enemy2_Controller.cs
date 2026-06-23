@@ -5,6 +5,7 @@ public class Enemy2_Controller : MonoBehaviour
 {
     [SerializeField] float speed = 5.0f;
     [SerializeField] int hp = 10;
+    [SerializeField] GameObject explosionPrefab;
     public float waitTime = 1.5f;
 
     bool started = false;
@@ -45,6 +46,11 @@ public class Enemy2_Controller : MonoBehaviour
 
         if (hp <= 0)
         {
+            if (explosionPrefab != null)
+            {
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            }
+
             Destroy(gameObject);
         }
     }

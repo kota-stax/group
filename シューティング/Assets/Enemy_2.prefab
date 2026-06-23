@@ -181,4 +181,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy2_Controller
   speed: 5
   hp: 10
+  explosionPrefab: {fileID: 6599279764915239397, guid: 9794acb2bdea19d44b34dd5df519dfeb, type: 3}
   waitTime: 1.5
