@@ -16,6 +16,8 @@ public class Enemy2_Controller : MonoBehaviour
     bool started = false;
     bool isEscaping = false;
 
+    private bool activated = false;
+
     void Start()
     {
         Debug.Log("Boss Start HP : " + hp);
@@ -27,6 +29,7 @@ public class Enemy2_Controller : MonoBehaviour
         {
             started = true;
             StartCoroutine(Escape());
+            activated = true;
         }
     }
 
