@@ -9,6 +9,10 @@ public class Enemy2_Controller : MonoBehaviour
     [SerializeField] int scoreValue = 5; //  ここで5ポイントに設定！
     public float waitTime = 1.5f;
 
+    [SerializeField] GameObject enemyBulletPrefab;
+    [SerializeField] float shotInterval = 2f;
+    float shotTimer = 0f;
+
     bool started = false;
     bool isEscaping = false;
 
@@ -37,6 +41,19 @@ public class Enemy2_Controller : MonoBehaviour
         if (isEscaping)
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
+        }
+
+        shotTimer += Time.deltaTime;
+
+        if (shotTimer >= shotInterval)
+        {
+            shotTimer = 0f;
+
+            Instantiate(
+                enemyBulletPrefab,
+                transform.position,
+                Quaternion.identity
+            );
         }
     }
 

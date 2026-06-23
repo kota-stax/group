@@ -11,8 +11,17 @@ public class Enemy1_Controller : MonoBehaviour
 
     float shotTimer = 0f;
 
+    private bool activated = false;
+
     void Update()
     {
+        if (GetComponent<SpriteRenderer>().isVisible) //Ž‹ŠE“à‚É“ü‚Á‚½‚ç’e‚ðŒ‚‚¿Žn‚ß‚é‚æ‚¤‚É
+        {
+            activated = true;
+        }
+
+        if (!activated) return;
+
         shotTimer += Time.deltaTime;
 
         if (shotTimer >= shotInterval)
