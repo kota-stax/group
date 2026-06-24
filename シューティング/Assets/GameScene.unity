@@ -697,7 +697,7 @@ MonoBehaviour:
   spawnInterval1: 1.5
   enemyPrefab2: {fileID: 3038850851559588077, guid: ddf5dc7793e35434ea95889d1aa280c5, type: 3}
   spawnInterval2: 10
-  bossPrefab1: {fileID: 0}
+  bossPrefab1: {fileID: 8885499075363611235, guid: a1f88f6cbc3e6de4aba6afb856eccb1b, type: 3}
   spawnInterval1_1: 10
 --- !u!1 &1474366730 stripped
 GameObject:
